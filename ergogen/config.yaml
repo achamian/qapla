@@ -7,6 +7,10 @@ units:
   fillet: 3
   choc_cutout: 13.8
 
+  mcu_x: 18
+  mcu_y: 38
+  mcu_p: 2
+
   $default_width: cx
   $default_height: cy
 points:
@@ -137,3 +141,25 @@ outlines:
       size: [1.5kx-0.5, 1ky-0.5]
   _all_keycaps: [+_keycaps1u, +_keycaps15u]
   plate_with_keycaps: [+plate, -_all_keycaps]
+  _mcu:
+    - what: rectangle
+      size: [mcu_x, mcu_y]
+      where:
+        ref: matrix_inner_num
+      adjust:
+        shift: [0.5px + 0.5mcu_x + mcu_p, 0.5py - 0.5mcu_y - 0.5]
+  board:
+    - name: _switch_plate
+    - what: polygon
+      operation: add
+      points:
+        - ref: matrix_inner_num
+          shift: [0.5px, 0.5py]
+        - ref: matrix_inner_num
+          shift: [0.5px + mcu_x + 2mcu_p, 0.5py]
+        - ref: thumb_outer_mod
+          shift: [0.75py, -0.5px]
+        - ref: matrix_inner_far_bottom
+          shift: [-0.5px, -0.5py]
+  board_with_components:
+    [+board, -_all_keycaps, -_mcu]
