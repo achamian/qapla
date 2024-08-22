@@ -1,10 +1,10 @@
 units:
   kx: cx
   ky: cy
-  padding: 2
+  padding: 3
   px: kx + padding
   py: ky + padding
-  
+  fillet: 3
   choc_cutout: 13.8
 
   $default_width: cx
@@ -117,13 +117,23 @@ outlines:
         - ref: matrix_outer_bottom
           shift: [-0.5px, -0.5py]
     - what: circle
-      radius: 143
+      radius: 144
       where:
         ref: matrix_middle_mod
-        shift: [-31, -158]
+        shift: [-31, -160]
       operation: subtract
   plate: 
     - name: _switch_plate
-      fillet: 2
+      fillet: fillet
     - name: _switches
       operation: subtract
+  _keycaps1u:
+    - what: rectangle
+      where: /1u/
+      size: [kx-0.5, ky-0.5]
+  _keycaps15u:
+    - what: rectangle
+      where: /15u/
+      size: [1.5kx-0.5, 1ky-0.5]
+  _all_keycaps: [+_keycaps1u, +_keycaps15u]
+  plate_with_keycaps: [+plate, -_all_keycaps]
