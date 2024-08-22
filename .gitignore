@@ -1,0 +1,4 @@
+/output
+*.kicad_pcb.lck
+/pcb/qapla/fp-info-cache
+/pcb/qapla/qapla-backups
