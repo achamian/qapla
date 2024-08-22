@@ -5,6 +5,8 @@ units:
   px: kx + padding
   py: ky + padding
   
+  choc_cutout: 13.8
+
   $default_width: cx
   $default_height: cy
 points:
@@ -78,3 +80,50 @@ points:
             tags: [15u]
       rows:
         mod:
+outlines:
+  _switches:
+    - what: rectangle
+      where: true
+      size: choc_cutout
+      bound: false
+  _switch_plate:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_outer_num
+          shift: [-0.5px, 0.5py]
+        - ref: matrix_pinky_num
+          shift: [0, 0.5py]
+        - ref: matrix_ring_num
+          shift: [-0.5px, 0.5py]
+        - ref: matrix_middle_num
+          shift: [-0.5px, 0.5py]
+        - ref: matrix_middle_num
+          shift: [0.5px, 0.5py]
+        - ref: matrix_index_num
+          shift: [0.5px, 0.5py]
+        - ref: matrix_inner_num
+          shift: [0.5px, 0.5py]
+        - ref: matrix_inner_far_bottom
+          shift: [-0.5px + padding, 0.5py]
+        - ref: matrix_inner_far_bottom
+          shift: [0.5px, 0.5py]
+        - ref: matrix_inner_far_bottom
+          shift: [0.5px, -0.5py]
+        - ref: thumb_outer_mod
+          shift: [0.75py, -0.5px]
+        - ref: thumb_outer_mod
+          shift: [-0.75py, -0.5px]
+        - ref: matrix_outer_bottom
+          shift: [-0.5px, -0.5py]
+    - what: circle
+      radius: 143
+      where:
+        ref: matrix_middle_mod
+        shift: [-31, -158]
+      operation: subtract
+  plate: 
+    - name: _switch_plate
+      fillet: 2
+    - name: _switches
+      operation: subtract
