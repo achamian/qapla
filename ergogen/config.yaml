@@ -1,0 +1,80 @@
+units:
+  kx: cx
+  ky: cy
+  padding: 2
+  px: kx + padding
+  py: ky + padding
+  
+  $default_width: cx
+  $default_height: cy
+points:
+  zones:
+    matrix:
+      key:
+        padding: 1ky
+        spread: 1kx
+        tags: [1u]
+      rotate: 10
+      columns:
+        outer:
+          key:
+          rows.mod.skip: true
+        pinky:
+          key:
+          rows.mod.skip: true
+        ring:
+          key:
+            stagger: 12
+            splay: -5
+          rows.mod.skip: true
+        middle:
+          key:
+            stagger: 5
+            splay: -5
+        index:
+          key:
+            stagger: -5
+          rows.mod.skip: true
+        inner:
+          key:
+            stagger: -2.5
+          rows.mod.skip: true
+        inner_far:
+          key:
+            stagger: -2.5
+            skip: true
+          rows:
+            bottom.skip: false
+      rows:
+        mod:
+        bottom:
+        home:
+        top:
+        num:
+    thumb:
+      key:
+        padding: 1ky
+        spread: 1kx
+        shift: [6, -6]
+      anchor:
+        ref: matrix_index_mod
+      columns:
+        alt:
+          key:
+            splay: -15
+            tags: [1u]
+        inner:
+          key:
+            splay: -15
+            rotate: 90
+            spread: 1.5kx
+            tags: [15u]
+        outer:
+          key:
+            splay: -10
+            rotate: 90
+            spread: 1.25kx
+            shift: [5, -7]
+            tags: [15u]
+      rows:
+        mod:
