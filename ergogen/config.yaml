@@ -163,3 +163,12 @@ outlines:
           shift: [-0.5px, -0.5py]
   board_with_components:
     [+board, -_all_keycaps, -_mcu]
+pcbs:
+  qapla:
+    template: kicad8
+    outlines:
+      main:
+        outline: board
+      keycaps:
+        outline: _all_keycaps
+        layer: Eco1.User
