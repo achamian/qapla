@@ -8,8 +8,9 @@ units:
   choc_cutout: 13.8
 
   mcu_x: 18
-  mcu_y: 38
-  mcu_p: 2
+  mcu_y: 35
+  mcu_p: 1.5
+  inner_pad: 2
 
   $default_width: u
   $default_height: u
@@ -159,7 +160,9 @@ outlines:
         - ref: matrix_inner_num
           shift: [0.5px, 0.5py]
         - ref: matrix_inner_num
-          shift: [0.5px + mcu_x + 2mcu_p, 0.5py]
+          shift: [0.5px + mcu_x + 2mcu_p + inner_pad, 0.5py]
+        - ref: matrix_inner_bottom
+          shift: [0.5px + mcu_x + 2mcu_p + inner_pad, -0.5py]
         - ref: thumb_outer_mod
           shift: [0.75ky + 0.5padding, -0.5px]
         - ref: matrix_inner_far_bottom
@@ -197,3 +200,32 @@ pcbs:
           to: "{{colrow}}"
         adjust:
           rotate: 180
+      diode-bottom:
+        what: ceoloide/diode_tht_sod123
+        where: /(num|home|mod)/
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+          reversible: true
+          include_tht: false
+        adjust:
+          shift: [7.5 , -0.5ky + 1]
+          rotate: 180
+      diode-top:
+        what: ceoloide/diode_tht_sod123
+        where: /(top|bottom)/
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+          reversible: true
+          include_tht: false
+        adjust:
+          shift: [7.5 , 0.5ky - 1]
+          rotate: 180
+      promicro:
+        what: ceoloide/mcu_nice_nano
+        where:
+          ref: matrix_inner_num
+          shift: [0.5px + 0.5mcu_x + mcu_p, 0.5py - 0.5mcu_y - 0.5]
+        params:
+          reversible: true
