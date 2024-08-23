@@ -28,39 +28,51 @@ points:
       columns:
         outer:
           key:
+            column_net: P10
           rows.mod.skip: true
         pinky:
           key:
+            column_net: P16
           rows.mod.skip: true
         ring:
           key:
             stagger: 12
             splay: -5
+            column_net: P14
           rows.mod.skip: true
         middle:
           key:
             stagger: 5
             splay: -5
+            column_net: P15
         index:
           key:
             stagger: -5
+            column_net: P18
           rows.mod.skip: true
         inner:
           key:
             stagger: -2.5
+            column_net: P19
           rows.mod.skip: true
         inner_far:
           key:
             stagger: -2.5
             skip: true
+            column_net: P20
           rows:
             bottom.skip: false
       rows:
         mod:
+          row_net: P5
         bottom:
+          row_net: P6
         home:
+          row_net: P7
         top:
+          row_net: P8
         num:
+          row_net: P9
     thumb:
       key:
         padding: 1ky
@@ -73,12 +85,14 @@ points:
           key:
             splay: -15
             tags: [1u, key]
+            column_net: P18
         inner:
           key:
             splay: -15
             rotate: 90
             spread: 1.5kx
             tags: [15u, key]
+            column_net: P19
         outer:
           key:
             splay: -10
@@ -86,8 +100,10 @@ points:
             spread: 1.25kx
             shift: [5, -7]
             tags: [15u, key]
+            column_net: P20
       rows:
         mod:
+          row_net: P9
 outlines:
   _switches:
     - what: rectangle
@@ -229,3 +245,22 @@ pcbs:
           shift: [0.5px + 0.5mcu_x + mcu_p, 0.5py - 0.5mcu_y - 0.5]
         params:
           reversible: true
+      display:
+        what: ceoloide/display_nice_view
+        where:
+          ref: matrix_inner_num
+          shift: [0.5px + 0.5mcu_x + mcu_p, -0.5ky - mcu_p]
+        params:
+          reversible: true
+          include_traces: false
+          MOSI: P2
+          SCK: P3
+          CS: P1
+      reset-switch:
+        what: reset_switch
+        where:
+          ref: matrix_inner_num
+          shift: [0.5px + mcu_x + 2 * mcu_p, 0]
+          rotate: 90
+      # battery connector
+      # power switch
