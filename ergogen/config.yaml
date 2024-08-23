@@ -123,9 +123,7 @@ outlines:
         - ref: matrix_middle_num
           shift: [-0.5px, 0.5py]
         - ref: matrix_middle_num
-          shift: [0.5px, 0.5py]
-        - ref: matrix_index_num
-          shift: [0.5px, 0.5py]
+          shift: [1.5px, 0.5py]
         - ref: matrix_inner_num
           shift: [0.5px, 0.5py]
         - ref: matrix_inner_far_bottom
@@ -146,7 +144,7 @@ outlines:
         ref: matrix_middle_mod
         shift: [-46, -221]
       operation: subtract
-  plate: 
+  plate:
     - name: _switch_plate
       fillet: fillet
     - name: _switches
@@ -262,5 +260,11 @@ pcbs:
           ref: matrix_inner_num
           shift: [0.5px + mcu_x + 2 * mcu_p, 0]
           rotate: 90
+      power_switch:
+        what: switch_JS102011SAQN
+        where:
+          ref: matrix_middle_num
+          shift: [1.5px - 6, 0.5py - 3]
+          rotate: 180
       # battery connector
       # power switch
