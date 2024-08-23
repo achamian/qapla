@@ -2,3 +2,4 @@
 *.kicad_pcb.lck
 /pcb/qapla/fp-info-cache
 /pcb/qapla/qapla-backups
+/pcb/qapla/_autosave*

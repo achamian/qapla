@@ -1,25 +1,28 @@
 units:
-  kx: cx
-  ky: cy
-  padding: 3
+  kx: u
+  ky: u
+  padding: 2
   px: kx + padding
   py: ky + padding
-  fillet: 3
+  fillet: 2
   choc_cutout: 13.8
 
   mcu_x: 18
   mcu_y: 38
   mcu_p: 2
 
-  $default_width: cx
-  $default_height: cy
+  $default_width: u
+  $default_height: u
 points:
   zones:
     matrix:
+      # Fix placement on KiCAD sheet.
+      anchor:
+        shift: [100, -150]
       key:
         padding: 1ky
         spread: 1kx
-        tags: [1u]
+        tags: [1u, key]
       rotate: 10
       columns:
         outer:
@@ -68,20 +71,20 @@ points:
         alt:
           key:
             splay: -15
-            tags: [1u]
+            tags: [1u, key]
         inner:
           key:
             splay: -15
             rotate: 90
             spread: 1.5kx
-            tags: [15u]
+            tags: [15u, key]
         outer:
           key:
             splay: -10
             rotate: 90
             spread: 1.25kx
             shift: [5, -7]
-            tags: [15u]
+            tags: [15u, key]
       rows:
         mod:
 outlines:
@@ -115,16 +118,16 @@ outlines:
         - ref: matrix_inner_far_bottom
           shift: [0.5px, -0.5py]
         - ref: thumb_outer_mod
-          shift: [0.75py, -0.5px]
+          shift: [0.75ky + 0.5padding, -0.5px]
         - ref: thumb_outer_mod
-          shift: [-0.75py, -0.5px]
+          shift: [-0.75ky - 0.5padding, -0.5px]
         - ref: matrix_outer_bottom
           shift: [-0.5px, -0.5py]
     - what: circle
-      radius: 144
+      radius: 203.5
       where:
         ref: matrix_middle_mod
-        shift: [-31, -160]
+        shift: [-46, -221]
       operation: subtract
   plate: 
     - name: _switch_plate
@@ -158,9 +161,10 @@ outlines:
         - ref: matrix_inner_num
           shift: [0.5px + mcu_x + 2mcu_p, 0.5py]
         - ref: thumb_outer_mod
-          shift: [0.75py, -0.5px]
+          shift: [0.75ky + 0.5padding, -0.5px]
         - ref: matrix_inner_far_bottom
           shift: [-0.5px, -0.5py]
+      fillet: fillet
   board_with_components:
     [+board, -_all_keycaps, -_mcu]
 pcbs:
@@ -175,12 +179,21 @@ pcbs:
     footprints:
       choc_hotswap:
         what: ceoloide/switch_choc_v1_v2
-        where: true
+        where: /key/
         params:
           reversible: true
           hotswap: true
           solder: false
           include_plated_holes: true
-          include_stabilizer_pad: false
+          choc_v2_support: false
           from: "{{column_net}}"
           to: "{{colrow}}"
+      mx_hotswap:
+        what: ceoloide/switch_mx
+        where: /key/
+        params:
+          reversible: true
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+        adjust:
+          rotate: 180
