@@ -82,6 +82,11 @@ module.exports = {
     `
     }
 
+    let reversible = `
+    (pad "1" thru_hole roundrect (at -2.5 -2.75 ${p.r}) (size 1.25 2.5) (drill 0.3) (layers "*.Cu" "*.Paste" "*.Mask") (roundrect_rratio 0.2))
+    (pad "2" thru_hole roundrect (at 0 -2.75 ${p.r}) (size 1.25 2.5) (drill 0.3) (layers "*.Cu" "*.Paste" "*.Mask") (roundrect_rratio 0.2) ${p.BAT_P.str})
+    (pad "3" thru_hole roundrect (at 2.5 -2.75 ${p.r}) (size 1.25 2.5) (drill 0.3) (layers "*.Cu" "*.Paste" "*.Mask") (roundrect_rratio 0.2) ${p.RAW.str})
+    `
     const closing = `
     (pad "" np_thru_hole circle (at -3.4 0) (size 0.9 0.9) (drill 0.9) (layers "*.Cu" "*.Mask"))
 	  (pad "" np_thru_hole circle (at 3.4 0) (size 0.9 0.9) (drill 0.9) (layers "*.Cu" "*.Mask"))
@@ -90,11 +95,17 @@ module.exports = {
 
     let final = standard_opening;
 
-    if (p.side = "F" || p.reversible) {
+    if (p.side == "F" && !p.reversible) {
       final += silkscreen(p.side) + courtyard(p.side) + fab(p.side) + pads(p.side);
     }
-    if (p.side = "B" || p.reversible) {
+    if (p.side == "B" && !p.reversible) {
       final += silkscreen(p.side) + courtyard(p.side) + fab(p.side) + pads(p.side);
+    }
+
+    if (p.reversible) {
+      final += silkscreen("F") + courtyard("F") + fab("F");
+      final += silkscreen("B") + courtyard("B") + fab("B");
+      final += reversible;
     }
 
     return final + closing;

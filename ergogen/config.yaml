@@ -1,6 +1,6 @@
 units:
-  kx: u
-  ky: u
+  kx: cx
+  ky: cy
   padding: 2
   px: kx + padding
   py: ky + padding
@@ -10,10 +10,10 @@ units:
   mcu_x: 18
   mcu_y: 35
   mcu_p: 1.5
-  inner_pad: 2
+  padding_outside_mcu: 8
 
-  $default_width: u
-  $default_height: u
+  $default_width: cx
+  $default_height: cy
 points:
   zones:
     matrix:
@@ -117,7 +117,7 @@ outlines:
         - ref: matrix_outer_num
           shift: [-0.5px, 0.5py]
         - ref: matrix_pinky_num
-          shift: [0, 0.5py]
+          shift: [-0.5px, 0.5py]
         - ref: matrix_ring_num
           shift: [-0.5px, 0.5py]
         - ref: matrix_middle_num
@@ -129,9 +129,9 @@ outlines:
         - ref: matrix_inner_far_bottom
           shift: [-0.5px + padding, 0.5py]
         - ref: matrix_inner_far_bottom
-          shift: [0.5px, 0.5py]
+          shift: [mcu_x + 2mcu_p + padding_outside_mcu + padding - 0.5px, 0.5py]
         - ref: matrix_inner_far_bottom
-          shift: [0.5px, -0.5py]
+          shift: [mcu_x + 2mcu_p + padding_outside_mcu + padding - 0.5px, -0.5py]
         - ref: thumb_outer_mod
           shift: [0.75ky + 0.5padding, -0.5px]
         - ref: thumb_outer_mod
@@ -174,11 +174,11 @@ outlines:
         - ref: matrix_inner_num
           shift: [0.5px, 0.5py]
         - ref: matrix_inner_num
-          shift: [0.5px + mcu_x + 2mcu_p + inner_pad, 0.5py]
+          shift: [0.5px + mcu_x + 2mcu_p + padding_outside_mcu, 0.5py]
         - ref: matrix_inner_bottom
-          shift: [0.5px + mcu_x + 2mcu_p + inner_pad, -0.5py]
-        - ref: thumb_outer_mod
-          shift: [0.75ky + 0.5padding, -0.5px]
+          shift: [0.5px + mcu_x + 2mcu_p + padding_outside_mcu, -0.5py]
+        # - ref: thumb_outer_mod
+        #   shift: [0.75ky + 0.5padding, -0.5px]
         - ref: matrix_inner_far_bottom
           shift: [-0.5px, -0.5py]
       fillet: fillet
@@ -193,6 +193,9 @@ pcbs:
       keycaps:
         outline: _all_keycaps
         layer: Eco1.User
+      plate:
+        outline: plate
+        layer: Eco2.User
     footprints:
       choc_hotswap:
         what: ceoloide/switch_choc_v1_v2
@@ -205,18 +208,9 @@ pcbs:
           choc_v2_support: false
           from: "{{column_net}}"
           to: "{{colrow}}"
-      mx_hotswap:
-        what: ceoloide/switch_mx
-        where: /key/
-        params:
-          reversible: true
-          from: "{{column_net}}"
-          to: "{{colrow}}"
-        adjust:
-          rotate: 180
       diode-bottom:
         what: ceoloide/diode_tht_sod123
-        where: /(num|home|mod)/
+        where: /(num|home)/
         params:
           from: "{{colrow}}"
           to: "{{row_net}}"
@@ -227,7 +221,7 @@ pcbs:
           rotate: 180
       diode-top:
         what: ceoloide/diode_tht_sod123
-        where: /(top|bottom)/
+        where: /(top|bottom|mod)/
         params:
           from: "{{colrow}}"
           to: "{{row_net}}"
@@ -247,7 +241,7 @@ pcbs:
         what: ceoloide/display_nice_view
         where:
           ref: matrix_inner_num
-          shift: [0.5px + 0.5mcu_x + mcu_p, -0.5ky - mcu_p]
+          shift: [0.5px + 0.5mcu_x + mcu_p, -0.5ky - mcu_p - 2]
         params:
           reversible: true
           include_traces: false
@@ -257,14 +251,22 @@ pcbs:
       reset-switch:
         what: reset_switch
         where:
-          ref: matrix_inner_num
-          shift: [0.5px + mcu_x + 2 * mcu_p, 0]
+          ref: matrix_inner_top
+          shift: [0.5px + mcu_x + mcu_p + 6, 0]
           rotate: 90
       power_switch:
         what: switch_JS102011SAQN
         where:
-          ref: matrix_middle_num
-          shift: [1.5px - 6, 0.5py - 3]
+          ref: matrix_inner_num
+          shift: [0.5px + mcu_x + 2mcu_p + 3.25, 0.5py - 2]
           rotate: 180
-      # battery connector
-      # power switch
+        params:
+          reversible: true
+      battery_connector:
+        what: ceoloide/battery_connector_jst_ph_2
+        params:
+          reversible: true
+        where:
+          ref: matrix_inner_num
+          shift: [0.5px + mcu_x + 2mcu_p + 3.25, 1]
+          # rotate:
