@@ -1,4 +1,5 @@
-
+// Description:
+//  SMD side-operated on-off switch JS102011SAQN
 module.exports = {
   params: {
     side: 'F',

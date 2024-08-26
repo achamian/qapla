@@ -15,10 +15,10 @@ module.exports = {
           (attr smd)
 
           ${'' /* Pads */}
-          (pad 1 smd rect (at -3.75 0 ${p.r}) (size 1.75 1.5) (layers F.Cu F.Paste F.Mask) (clearance 0.1905) ${p.GND})
-          (pad 2 smd rect (at 3.75 0 ${p.r}) (size 1.75 1.5) (layers F.Cu F.Paste F.Mask) (clearance 0.1905) ${p.RST})
-          (pad 1 smd rect (at -3.75 0 ${p.r}) (size 1.75 1.5) (layers B.Cu B.Paste B.Mask) (clearance 0.1905) ${p.GND})
-          (pad 2 smd rect (at 3.75 0 ${p.r}) (size 1.75 1.5) (layers B.Cu B.Paste B.Mask) (clearance 0.1905) ${p.RST})
+          (pad 1 smd roundrect (at -3.75 0 ${p.r}) (size 1.75 1.5) (layers F.Cu F.Paste F.Mask) (roundrect_rratio 0.2) (clearance 0.1905) ${p.GND})
+          (pad 2 smd roundrect (at 3.75 0 ${p.r}) (size 1.75 1.5) (layers F.Cu F.Paste F.Mask) (roundrect_rratio 0.2) (clearance 0.1905) ${p.RST})
+          (pad 1 smd roundrect (at -3.75 0 ${p.r}) (size 1.75 1.5) (layers B.Cu B.Paste B.Mask) (roundrect_rratio 0.2) (clearance 0.1905) ${p.GND})
+          (pad 2 smd roundrect (at 3.75 0 ${p.r}) (size 1.75 1.5) (layers B.Cu B.Paste B.Mask) (roundrect_rratio 0.2) (clearance 0.1905) ${p.RST})
           (pad 3 thru_hole circle (at -2.5 0 ${p.r}) (size 0.9 0.9) (drill 0.6) (layers *.Cu *.Mask) ${p.GND})
           (pad 4 thru_hole circle (at 2.5 0 ${p.r}) (size 0.9 0.9) (drill 0.6) (layers *.Cu *.Mask) ${p.RST})
         )

@@ -1,7 +1,7 @@
 units:
   kx: cx
   ky: cy
-  padding: 2
+  padding: 3
   px: kx + padding
   py: ky + padding
   fillet: 2
@@ -10,7 +10,7 @@ units:
   mcu_x: 18
   mcu_y: 35
   mcu_p: 1.5
-  padding_outside_mcu: 8
+  padding_outside_mcu: 8.5
 
   $default_width: cx
   $default_height: cy
@@ -177,8 +177,6 @@ outlines:
           shift: [0.5px + mcu_x + 2mcu_p + padding_outside_mcu, 0.5py]
         - ref: matrix_inner_bottom
           shift: [0.5px + mcu_x + 2mcu_p + padding_outside_mcu, -0.5py]
-        # - ref: thumb_outer_mod
-        #   shift: [0.75ky + 0.5padding, -0.5px]
         - ref: matrix_inner_far_bottom
           shift: [-0.5px, -0.5py]
       fillet: fillet
@@ -258,7 +256,7 @@ pcbs:
         what: switch_JS102011SAQN
         where:
           ref: matrix_inner_num
-          shift: [0.5px + mcu_x + 2mcu_p + 3.25, 0.5py - 2]
+          shift: [0.5px + mcu_x + 2mcu_p + 3.25, 0.5py - 2.5]
           rotate: 180
         params:
           reversible: true
@@ -269,4 +267,8 @@ pcbs:
         where:
           ref: matrix_inner_num
           shift: [0.5px + mcu_x + 2mcu_p + 3.25, 1]
-          # rotate:
+      battery_led:
+        what: resistor_led_0805_2012Metric
+        where:
+          ref: matrix_inner_num
+          shift: [0.5px + 0.5mcu_x + mcu_p, -0.5ky - mcu_p - 21.55]
