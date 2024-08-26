@@ -172,6 +172,96 @@
 (net 88 "_3_1")
 
   
+  (footprint "ceoloide:mounting_hole_npth"
+    (layer "F.Cu")
+    (at 138.7031687 46.6227519 10)
+    (property "Reference" "MH1"
+      (at 0 2.55 10)
+      (layer "F.SilkS")
+      hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad "" np_thru_hole circle
+      (at 0 0 10)
+      (size 3.2 3.2)
+      (drill 3.2)
+      (layers "*.Cu" "*.Mask")
+    )
+  )
+  
+
+  (footprint "ceoloide:mounting_hole_npth"
+    (layer "F.Cu")
+    (at 157.46152419999999 107.3063443 5)
+    (property "Reference" "MH2"
+      (at 0 2.55 5)
+      (layer "F.SilkS")
+      hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad "" np_thru_hole circle
+      (at 0 0 5)
+      (size 3.2 3.2)
+      (drill 3.2)
+      (layers "*.Cu" "*.Mask")
+    )
+  )
+  
+
+  (footprint "ceoloide:mounting_hole_npth"
+    (layer "F.Cu")
+    (at 211.3930287 33.237541 0)
+    (property "Reference" "MH3"
+      (at 0 2.55 0)
+      (layer "F.SilkS")
+      hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad "" np_thru_hole circle
+      (at 0 0 0)
+      (size 3.2 3.2)
+      (drill 3.2)
+      (layers "*.Cu" "*.Mask")
+    )
+  )
+  
+
+  (footprint "ceoloide:mounting_hole_npth"
+    (layer "F.Cu")
+    (at 211.3930287 108.237541 0)
+    (property "Reference" "MH4"
+      (at 0 2.55 0)
+      (layer "F.SilkS")
+      hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad "" np_thru_hole circle
+      (at 0 0 0)
+      (size 3.2 3.2)
+      (drill 3.2)
+      (layers "*.Cu" "*.Mask")
+    )
+  )
+  
+
+  (footprint "ceoloide:mounting_hole_npth"
+    (layer "F.Cu")
+    (at 245.1430287 98.7375409 0)
+    (property "Reference" "MH5"
+      (at 0 2.55 0)
+      (layer "F.SilkS")
+      hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad "" np_thru_hole circle
+      (at 0 0 0)
+      (size 3.2 3.2)
+      (drill 3.2)
+      (layers "*.Cu" "*.Mask")
+    )
+  )
+  
+
   (footprint "ceoloide:switch_choc_v1_v2"
     (layer "B.Cu")
     (at 121.5759829 113.6146134 10)

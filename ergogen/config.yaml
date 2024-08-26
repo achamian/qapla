@@ -182,6 +182,48 @@ outlines:
       fillet: fillet
   board_with_components:
     [+board, -_all_keycaps, -_mcu]
+mounting_holes:
+  hole_1:
+    what: ceoloide/mounting_hole_npth
+    where:
+      ref: matrix_pinky_num
+      shift: [0.5px, 0.6py]
+    params:
+      hole_size: drill_size
+      hole_drill: drill_size
+  hole_2:
+    what: ceoloide/mounting_hole_npth
+    where:
+      ref: matrix_ring_bottom
+      shift: [0, -0.6py]
+    params:
+      hole_size: drill_size
+      hole_drill: drill_size
+  hole_3:
+    what: ceoloide/mounting_hole_npth
+    where:
+      ref: matrix_inner_num
+      shift: [0, 0.6py]
+    params:
+      hole_size: drill_size
+      hole_drill: drill_size
+  hole_4:
+    what: ceoloide/mounting_hole_npth
+    where:
+      ref: matrix_inner_bottom
+      shift: [0, -0.6py]
+    params:
+      hole_size: drill_size
+      hole_drill: drill_size
+  hole_5:
+    what: ceoloide/mounting_hole_npth
+    where:
+      ref: matrix_inner_far_bottom
+      shift: [0.75px, 0]
+    params:
+      hole_size: drill_size
+      hole_drill: drill_size
+  $params: [drill_size]
 pcbs:
   qapla:
     template: kicad8
@@ -272,3 +314,19 @@ pcbs:
         where:
           ref: matrix_inner_num
           shift: [0.5px + 0.5mcu_x + mcu_p, -0.5ky - mcu_p - 21.55]
+      $extends: mounting_holes
+      $args: [3.2]
+  qapla_plate:
+    template: kicad8
+    outlines:
+      main:
+        outline: plate
+      keycaps:
+        outline: _all_keycaps
+        layer: Eco1.User
+      plate:
+        outline: plate
+        layer: Eco2.User
+    footprints:
+      $extends: mounting_holes
+      $args: [2.2]
