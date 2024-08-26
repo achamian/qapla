@@ -314,8 +314,18 @@ pcbs:
         where:
           ref: matrix_inner_num
           shift: [0.5px + 0.5mcu_x + mcu_p, -0.5ky - mcu_p - 21.55]
+      display_cover_hole_1:
+        what: ceoloide/mounting_hole_npth
+        where:
+          ref: matrix_inner_far_bottom
+          shift: [-4, 14]
+      display_cover_hole_2:
+        what: ceoloide/mounting_hole_npth
+        where:
+          ref: matrix_inner_far_bottom
+          shift: [18.5, 14]
       $extends: mounting_holes
-      $args: [3.2]
+      $args: [3.4]
   qapla_plate:
     template: kicad8
     outlines:

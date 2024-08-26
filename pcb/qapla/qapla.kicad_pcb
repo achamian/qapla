@@ -6007,6 +6007,42 @@
     (pad "4" thru_hole roundrect (at -1.5 0) (size 1.2 1.4) (drill 0.3) (layers "*.Cu" "*.Paste" "*.Mask") (roundrect_rratio 0.208333) (net 88 "_3_1"))
   )
     
+
+  (footprint "ceoloide:mounting_hole_npth"
+    (layer "F.Cu")
+    (at 225.3930287 84.7375409 0)
+    (property "Reference" "MH6"
+      (at 0 2.55 0)
+      (layer "F.SilkS")
+      hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad "" np_thru_hole circle
+      (at 0 0 0)
+      (size 2.2 2.2)
+      (drill 2.2)
+      (layers "*.Cu" "*.Mask")
+    )
+  )
+  
+
+  (footprint "ceoloide:mounting_hole_npth"
+    (layer "F.Cu")
+    (at 247.8930287 84.7375409 0)
+    (property "Reference" "MH7"
+      (at 0 2.55 0)
+      (layer "F.SilkS")
+      hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad "" np_thru_hole circle
+      (at 0 0 0)
+      (size 2.2 2.2)
+      (drill 2.2)
+      (layers "*.Cu" "*.Mask")
+    )
+  )
+  
   (gr_line (start 112.41612146766047 122.13354750570238) (end 100.99025906060282 57.33426183375843) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 (gr_line (start 102.61257818071924 55.01734994784417) (end 117.89788248484034 52.32213838072413) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 (gr_line (start 118.75230871386798 51.95122949357528) (end 140.36891154594556 35.702370783414466) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
