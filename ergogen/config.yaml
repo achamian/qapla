@@ -120,10 +120,10 @@ points:
             shift: [2.15kx, 2.4ky]
         hole3:
           key:
-            shift: [3.8kx, 6.9ky]
+            shift: [4.1kx, 6.85ky]
         hole4:
           key:
-            shift: [3.1kx, 2.4ky]
+            shift: [3.05kx, 2.45ky]
         hole5:
           key:
             shift: [3.75kx, 3ky]
@@ -313,6 +313,9 @@ pcbs:
     outlines:
       main:
         outline: plate
+      keycaps:
+        outline: _all_keycaps
+        layer: Eco1.User
     footprints:
       mounting_holes:
         what: ceoloide/mounting_hole_plated
