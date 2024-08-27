@@ -7,7 +7,7 @@ module.exports = {
     },
     body: (p) => {
       return `
-        (footprint trrs_jumper (layer F.Cu) (tedit 66B07A26)
+        (footprint reset_switch (layer F.Cu) (tedit 66B07A26)
           ${p.at /* parametric position */}
           ${'' /* footprint reference */}
           (fp_text reference "${p.ref}" (at 0 0) (layer F.SilkS) ${p.ref_hide} (effects (font (size 1.27 1.27) (thickness 0.15))))

@@ -104,10 +104,33 @@ points:
       rows:
         mod:
           row_net: P9
+    mount_points:
+      anchor:
+        shift: [100, -150]
+      key:
+        height: 2
+        width: 2
+        tags: [hole]
+      columns:
+        hole1:
+          key:
+            shift: [2.1kx, 6.2ky]
+        hole2:
+          key:
+            shift: [2.15kx, 2.4ky]
+        hole3:
+          key:
+            shift: [3.8kx, 6.9ky]
+        hole4:
+          key:
+            shift: [3.1kx, 2.4ky]
+        hole5:
+          key:
+            shift: [3.75kx, 3ky]
 outlines:
   _switches:
     - what: rectangle
-      where: true
+      where: /key/
       size: choc_cutout
       bound: false
   _switch_plate:
@@ -182,48 +205,6 @@ outlines:
       fillet: fillet
   board_with_components:
     [+board, -_all_keycaps, -_mcu]
-mounting_holes:
-  hole_1:
-    what: ceoloide/mounting_hole_npth
-    where:
-      ref: matrix_pinky_num
-      shift: [0.5px, 0.6py]
-    params:
-      hole_size: drill_size
-      hole_drill: drill_size
-  hole_2:
-    what: ceoloide/mounting_hole_npth
-    where:
-      ref: matrix_ring_bottom
-      shift: [0, -0.6py]
-    params:
-      hole_size: drill_size
-      hole_drill: drill_size
-  hole_3:
-    what: ceoloide/mounting_hole_npth
-    where:
-      ref: matrix_inner_num
-      shift: [0, 0.6py]
-    params:
-      hole_size: drill_size
-      hole_drill: drill_size
-  hole_4:
-    what: ceoloide/mounting_hole_npth
-    where:
-      ref: matrix_inner_bottom
-      shift: [0, -0.6py]
-    params:
-      hole_size: drill_size
-      hole_drill: drill_size
-  hole_5:
-    what: ceoloide/mounting_hole_npth
-    where:
-      ref: matrix_inner_far_bottom
-      shift: [0.75px, 0]
-    params:
-      hole_size: drill_size
-      hole_drill: drill_size
-  $params: [drill_size]
 pcbs:
   qapla:
     template: kicad8
@@ -321,21 +302,21 @@ pcbs:
         where:
           ref: matrix_inner_far_bottom
           shift: [18.5, 14]
-      $extends: mounting_holes
-      $args: [3.4]
+      mounting_holes:
+        what: ceoloide/mounting_hole_plated
+        where: /hole/
+        params:
+          drill: 3.4
+          outline: 0.2
   qapla_plate:
     template: kicad8
     outlines:
       main:
         outline: plate
     footprints:
-      $extends: mounting_holes
-      $args: [2.2]
-  bottom_plate:
-    template: kicad8
-    outlines:
-      main:
-        outline: board
-    footprints:
-      $extends: mounting_holes
-      $args: [2.2]
+      mounting_holes:
+        what: ceoloide/mounting_hole_plated
+        where: /hole/
+        params:
+          drill: 2.2
+          outline: 1.2
