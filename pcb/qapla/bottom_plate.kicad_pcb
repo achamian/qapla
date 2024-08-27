@@ -1,0 +1,200 @@
+
+
+(kicad_pcb
+  (version 20240108)
+  (generator "ergogen")
+  (generator_version "4.1.0")
+  (general
+    (thickness 1.6)
+    (legacy_teardrops no)
+  )
+  (paper "A3")
+  (title_block
+    (title "bottom_plate")
+    (date "2024-08-26")
+    (rev "v1.0.0")
+    (company "Unknown")
+  )
+
+  (layers
+    (0 "F.Cu" signal)
+    (31 "B.Cu" signal)
+    (32 "B.Adhes" user "B.Adhesive")
+    (33 "F.Adhes" user "F.Adhesive")
+    (34 "B.Paste" user)
+    (35 "F.Paste" user)
+    (36 "B.SilkS" user "B.Silkscreen")
+    (37 "F.SilkS" user "F.Silkscreen")
+    (38 "B.Mask" user)
+    (39 "F.Mask" user)
+    (40 "Dwgs.User" user "User.Drawings")
+    (41 "Cmts.User" user "User.Comments")
+    (42 "Eco1.User" user "User.Eco1")
+    (43 "Eco2.User" user "User.Eco2")
+    (44 "Edge.Cuts" user)
+    (45 "Margin" user)
+    (46 "B.CrtYd" user "B.Courtyard")
+    (47 "F.CrtYd" user "F.Courtyard")
+    (48 "B.Fab" user)
+    (49 "F.Fab" user)
+  )
+
+  (setup
+    (pad_to_mask_clearance 0.05)
+    (allow_soldermask_bridges_in_footprints no)
+    (pcbplotparams
+      (layerselection 0x00010fc_ffffffff)
+      (plot_on_all_layers_selection 0x0000000_00000000)
+      (disableapertmacros no)
+      (usegerberextensions no)
+      (usegerberattributes yes)
+      (usegerberadvancedattributes yes)
+      (creategerberjobfile yes)
+      (dashed_line_dash_ratio 12.000000)
+      (dashed_line_gap_ratio 3.000000)
+      (svgprecision 4)
+      (plotframeref no)
+      (viasonmask no)
+      (mode 1)
+      (useauxorigin no)
+      (hpglpennumber 1)
+      (hpglpenspeed 20)
+      (hpglpendiameter 15.000000)
+      (pdf_front_fp_property_popups yes)
+      (pdf_back_fp_property_popups yes)
+      (dxfpolygonmode yes)
+      (dxfimperialunits yes)
+      (dxfusepcbnewfont yes)
+      (psnegative no)
+      (psa4output no)
+      (plotreference yes)
+      (plotvalue yes)
+      (plotfptext yes)
+      (plotinvisibletext no)
+      (sketchpadsonfab no)
+      (subtractmaskfromsilk no)
+      (outputformat 1)
+      (mirror no)
+      (drillshape 1)
+      (scaleselection 1)
+      (outputdirectory "")
+    )
+  )
+
+  (net 0 "")
+
+  
+  (footprint "ceoloide:mounting_hole_npth"
+    (layer "F.Cu")
+    (at 138.7031687 46.6227519 10)
+    (property "Reference" "MH1"
+      (at 0 2.55 10)
+      (layer "F.SilkS")
+      hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad "" np_thru_hole circle
+      (at 0 0 10)
+      (size 2.2 2.2)
+      (drill 2.2)
+      (layers "*.Cu" "*.Mask")
+    )
+  )
+  
+
+  (footprint "ceoloide:mounting_hole_npth"
+    (layer "F.Cu")
+    (at 157.46152419999999 107.3063443 5)
+    (property "Reference" "MH2"
+      (at 0 2.55 5)
+      (layer "F.SilkS")
+      hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad "" np_thru_hole circle
+      (at 0 0 5)
+      (size 2.2 2.2)
+      (drill 2.2)
+      (layers "*.Cu" "*.Mask")
+    )
+  )
+  
+
+  (footprint "ceoloide:mounting_hole_npth"
+    (layer "F.Cu")
+    (at 211.3930287 33.237541 0)
+    (property "Reference" "MH3"
+      (at 0 2.55 0)
+      (layer "F.SilkS")
+      hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad "" np_thru_hole circle
+      (at 0 0 0)
+      (size 2.2 2.2)
+      (drill 2.2)
+      (layers "*.Cu" "*.Mask")
+    )
+  )
+  
+
+  (footprint "ceoloide:mounting_hole_npth"
+    (layer "F.Cu")
+    (at 211.3930287 108.237541 0)
+    (property "Reference" "MH4"
+      (at 0 2.55 0)
+      (layer "F.SilkS")
+      hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad "" np_thru_hole circle
+      (at 0 0 0)
+      (size 2.2 2.2)
+      (drill 2.2)
+      (layers "*.Cu" "*.Mask")
+    )
+  )
+  
+
+  (footprint "ceoloide:mounting_hole_npth"
+    (layer "F.Cu")
+    (at 245.1430287 98.7375409 0)
+    (property "Reference" "MH5"
+      (at 0 2.55 0)
+      (layer "F.SilkS")
+      hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad "" np_thru_hole circle
+      (at 0 0 0)
+      (size 2.2 2.2)
+      (drill 2.2)
+      (layers "*.Cu" "*.Mask")
+    )
+  )
+  
+  (gr_line (start 112.41612146766047 122.13354750570238) (end 100.99025906060282 57.33426183375843) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 102.61257818071924 55.01734994784417) (end 117.89788248484034 52.32213838072413) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 118.75230871386798 51.95122949357528) (end 140.36891154594556 35.702370783414466) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 140.96104917761136 35.39623986096209) (end 164.59566408286838 27.832703361681126) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 165.2052490631292 27.7375409) (end 206.42089269436943 27.7375409) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 207.31531989436945 27.948686499999994) (end 221.47073750563055 35.0263954) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 251.3930287 108.57235164136341) (end 251.3930287 37.237541) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 251.42013130000004 108.90049164136349) (end 255.34141913312294 132.47670792711529) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 254.9006105918054 134.09042317635573) (end 238.89097308266068 153.16996618545056) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 236.30812170000002 153.5861248) (mid 177.7724239 129.0719543) (end 114.5317934 123.78091090000001) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 222.36516470563055 35.237541) (end 249.3930287 35.237541) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 102.6125781636182 55.017349950859426) (mid 101.3215704636182 55.83981265085943) (end 100.9902590636182 57.33426185085943) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 117.89788250194135 52.322138377708754) (mid 118.34698950194135 52.18711867770875) (end 118.75230870194135 51.95122947770875) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 140.9610491578722 35.39623979928097) (mid 140.6521365578722 35.52446199928097) (end 140.3689115578722 35.70237079928097) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 165.2052490631292 27.737540899999992) (mid 164.89676496312921 27.761474699999994) (end 164.5956640631292 27.83270329999999) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 207.31531989436942 27.9486865) (mid 206.88039849436942 27.7910429) (end 206.42089269436943 27.7375409) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 221.47073750563055 35.02639539999999) (mid 221.90565890563056 35.18403899999999) (end 222.36516470563055 35.23754099999999) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 251.3930287 37.237541) (mid 250.8072423 35.8233274) (end 249.3930287 35.237541) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 251.3930287 108.57235164136341) (mid 251.3998159 108.7369803413634) (end 251.4201313 108.90049164136342) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 254.90061063312294 134.09042322711537) (mid 255.29783553312294 133.33186652711535) (end 255.34141923312293 132.47670792711537) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 236.3081217 153.5861248) (mid 237.6770285 153.8589249) (end 238.8909731 153.1699663) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 112.4161216 122.13354749999999) (mid 113.1570006 123.36428989999999) (end 114.5317935 123.78091089999998) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+
+)
+

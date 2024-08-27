@@ -233,9 +233,6 @@ pcbs:
       keycaps:
         outline: _all_keycaps
         layer: Eco1.User
-      plate:
-        outline: plate
-        layer: Eco2.User
     footprints:
       choc_hotswap:
         what: ceoloide/switch_choc_v1_v2
@@ -331,12 +328,14 @@ pcbs:
     outlines:
       main:
         outline: plate
-      keycaps:
-        outline: _all_keycaps
-        layer: Eco1.User
-      plate:
-        outline: plate
-        layer: Eco2.User
+    footprints:
+      $extends: mounting_holes
+      $args: [2.2]
+  bottom_plate:
+    template: kicad8
+    outlines:
+      main:
+        outline: board
     footprints:
       $extends: mounting_holes
       $args: [2.2]
