@@ -85,14 +85,14 @@ points:
           key:
             splay: -15
             tags: [1u, key]
-            column_net: P18
+            column_net: P14
         inner:
           key:
             splay: -15
             rotate: 90
             spread: 1.5kx
             tags: [15u, key]
-            column_net: P19
+            column_net: P16
         outer:
           key:
             splay: -10
@@ -100,10 +100,10 @@ points:
             spread: 1.25kx
             shift: [5, -7]
             tags: [15u, key]
-            column_net: P20
+            column_net: P10
       rows:
         mod:
-          row_net: P9
+          row_net: P5
     mount_points:
       anchor:
         shift: [100, -150]
@@ -210,7 +210,7 @@ outlines:
       size: [7, 2]
       where:
         - ref: matrix_inner_num
-          shift: [0.5px + mcu_x + 2mcu_p + padding_outside_mcu, -0.5py + 1]
+          shift: [0.5px + mcu_x + 2mcu_p + padding_outside_mcu, -0.5py - 0.5]
   board_with_mount_holes:
     - name: _base_board
     - what: circle
@@ -249,7 +249,7 @@ pcbs:
           reversible: true
           include_tht: false
         adjust:
-          shift: [7.5 , -0.5ky + 1]
+          shift: [7.5 , -0.5ky + 1.15]
           rotate: 180
       diode-top:
         what: ceoloide/diode_tht_sod123
@@ -260,7 +260,7 @@ pcbs:
           reversible: true
           include_tht: false
         adjust:
-          shift: [7.5 , 0.5ky - 1]
+          shift: [7.5 , 0.5ky - 1.15]
           rotate: 180
       promicro:
         what: ceoloide/mcu_nice_nano
