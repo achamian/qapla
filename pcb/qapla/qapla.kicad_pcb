@@ -5964,10 +5964,10 @@
       (effects (font (size 1 1) (thickness 0.15)))
     )
     
-    (pad "" thru_hole circle (at 0 0 0) (size 3.8 3.8) (drill 3.4) (layers "*.Cu" "*.Mask"))
+    (pad "" thru_hole circle (at 0 0 0) (size 5.4 5.4) (drill 5) (layers "*.Cu" "*.Mask"))
     
-    (fp_circle (center 0 0) (end -2.15 0) (layer "F.CrtYd") (stroke (width 0.05) (type solid)) (fill none))
-    (fp_circle (center 0 0) (end -2.15 0) (layer "B.CrtYd") (stroke (width 0.05) (type solid)) (fill none))
+    (fp_circle (center 0 0) (end -2.95 0) (layer "F.CrtYd") (stroke (width 0.05) (type solid)) (fill none))
+    (fp_circle (center 0 0) (end -2.95 0) (layer "B.CrtYd") (stroke (width 0.05) (type solid)) (fill none))
     
   )
     
@@ -5982,17 +5982,17 @@
       (effects (font (size 1 1) (thickness 0.15)))
     )
     
-    (pad "" thru_hole circle (at 0 0 0) (size 3.8 3.8) (drill 3.4) (layers "*.Cu" "*.Mask"))
+    (pad "" thru_hole circle (at 0 0 0) (size 5.4 5.4) (drill 5) (layers "*.Cu" "*.Mask"))
     
-    (fp_circle (center 0 0) (end -2.15 0) (layer "F.CrtYd") (stroke (width 0.05) (type solid)) (fill none))
-    (fp_circle (center 0 0) (end -2.15 0) (layer "B.CrtYd") (stroke (width 0.05) (type solid)) (fill none))
+    (fp_circle (center 0 0) (end -2.95 0) (layer "F.CrtYd") (stroke (width 0.05) (type solid)) (fill none))
+    (fp_circle (center 0 0) (end -2.95 0) (layer "B.CrtYd") (stroke (width 0.05) (type solid)) (fill none))
     
   )
     
 
   (footprint "ceoloide:mounting_hole_plated"
     (layer "F.Cu")
-    (at 211.8 33.55 0)
+    (at 207.3 32.7 0)
     (property "Reference" "H3"
       (at 0 3 0)
       (layer "F.SilkS")
@@ -6000,10 +6000,10 @@
       (effects (font (size 1 1) (thickness 0.15)))
     )
     
-    (pad "" thru_hole circle (at 0 0 0) (size 3.8 3.8) (drill 3.4) (layers "*.Cu" "*.Mask"))
+    (pad "" thru_hole circle (at 0 0 0) (size 5.4 5.4) (drill 5) (layers "*.Cu" "*.Mask"))
     
-    (fp_circle (center 0 0) (end -2.15 0) (layer "F.CrtYd") (stroke (width 0.05) (type solid)) (fill none))
-    (fp_circle (center 0 0) (end -2.15 0) (layer "B.CrtYd") (stroke (width 0.05) (type solid)) (fill none))
+    (fp_circle (center 0 0) (end -2.95 0) (layer "F.CrtYd") (stroke (width 0.05) (type solid)) (fill none))
+    (fp_circle (center 0 0) (end -2.95 0) (layer "B.CrtYd") (stroke (width 0.05) (type solid)) (fill none))
     
   )
     
@@ -6018,10 +6018,10 @@
       (effects (font (size 1 1) (thickness 0.15)))
     )
     
-    (pad "" thru_hole circle (at 0 0 0) (size 3.8 3.8) (drill 3.4) (layers "*.Cu" "*.Mask"))
+    (pad "" thru_hole circle (at 0 0 0) (size 5.4 5.4) (drill 5) (layers "*.Cu" "*.Mask"))
     
-    (fp_circle (center 0 0) (end -2.15 0) (layer "F.CrtYd") (stroke (width 0.05) (type solid)) (fill none))
-    (fp_circle (center 0 0) (end -2.15 0) (layer "B.CrtYd") (stroke (width 0.05) (type solid)) (fill none))
+    (fp_circle (center 0 0) (end -2.95 0) (layer "F.CrtYd") (stroke (width 0.05) (type solid)) (fill none))
+    (fp_circle (center 0 0) (end -2.95 0) (layer "B.CrtYd") (stroke (width 0.05) (type solid)) (fill none))
     
   )
     
@@ -6036,10 +6036,10 @@
       (effects (font (size 1 1) (thickness 0.15)))
     )
     
-    (pad "" thru_hole circle (at 0 0 0) (size 3.8 3.8) (drill 3.4) (layers "*.Cu" "*.Mask"))
+    (pad "" thru_hole circle (at 0 0 0) (size 5.4 5.4) (drill 5) (layers "*.Cu" "*.Mask"))
     
-    (fp_circle (center 0 0) (end -2.15 0) (layer "F.CrtYd") (stroke (width 0.05) (type solid)) (fill none))
-    (fp_circle (center 0 0) (end -2.15 0) (layer "B.CrtYd") (stroke (width 0.05) (type solid)) (fill none))
+    (fp_circle (center 0 0) (end -2.95 0) (layer "F.CrtYd") (stroke (width 0.05) (type solid)) (fill none))
+    (fp_circle (center 0 0) (end -2.95 0) (layer "B.CrtYd") (stroke (width 0.05) (type solid)) (fill none))
     
   )
     
@@ -6049,7 +6049,8 @@
 (gr_line (start 140.96104917761136 35.39623986096209) (end 164.59566408286838 27.832703361681126) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 (gr_line (start 165.2052490631292 27.7375409) (end 206.42089269436943 27.7375409) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 (gr_line (start 207.31531989436945 27.948686499999994) (end 221.47073750563055 35.0263954) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_line (start 251.3930287 108.57235164136341) (end 251.3930287 37.237541) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 251.3930287 108.57235164136341) (end 251.3930287 55.237541) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 251.3930287 53.237541) (end 251.3930287 37.237541) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 (gr_line (start 251.42013130000004 108.90049164136349) (end 255.34141913312294 132.47670792711529) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 (gr_line (start 254.9006105918054 134.09042317635573) (end 238.89097308266068 153.16996618545056) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 (gr_arc (start 236.30812170000002 153.5861248) (mid 177.7724239 129.0719543) (end 114.5317934 123.78091090000001) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
@@ -6065,6 +6066,9 @@
 (gr_arc (start 254.90061063312294 134.09042322711537) (mid 255.29783553312294 133.33186652711535) (end 255.34141923312293 132.47670792711537) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 (gr_arc (start 236.3081217 153.5861248) (mid 237.6770285 153.8589249) (end 238.8909731 153.1699663) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 (gr_arc (start 112.4161216 122.13354749999999) (mid 113.1570006 123.36428989999999) (end 114.5317935 123.78091089999998) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 247.8930287 55.237541) (end 251.3930287 55.237541) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 251.3930287 53.237541) (end 247.8930287 53.237541) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 247.8930287 53.237541) (end 247.8930287 55.237541) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 (gr_line (start 114.3915125 123.2586989) (end 131.6256482 120.21985579999999) (layer Eco1.User) (stroke (width 0.15) (type default)))
 (gr_line (start 131.6256482 120.21985579999999) (end 128.7604533 103.9705279) (layer Eco1.User) (stroke (width 0.15) (type default)))
 (gr_line (start 128.7604533 103.9705279) (end 111.5263176 107.009371) (layer Eco1.User) (stroke (width 0.15) (type default)))

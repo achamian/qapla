@@ -122,7 +122,7 @@
 
   (footprint "ceoloide:mounting_hole_plated"
     (layer "F.Cu")
-    (at 211.8 33.55 0)
+    (at 207.3 32.7 0)
     (property "Reference" "H3"
       (at 0 3 0)
       (layer "F.SilkS")

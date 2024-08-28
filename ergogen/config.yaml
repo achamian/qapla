@@ -120,7 +120,7 @@ points:
             shift: [2.15kx, 2.4ky]
         hole3:
           key:
-            shift: [4.1kx, 6.85ky]
+            shift: [3.85kx, 6.9ky]
         hole4:
           key:
             shift: [3.05kx, 2.45ky]
@@ -189,7 +189,7 @@ outlines:
         ref: matrix_inner_num
       adjust:
         shift: [0.5px + 0.5mcu_x + mcu_p, 0.5py - 0.5mcu_y - 0.5]
-  board:
+  _base_board:
     - name: _switch_plate
     - what: polygon
       operation: add
@@ -203,6 +203,20 @@ outlines:
         - ref: matrix_inner_far_bottom
           shift: [-0.5px, -0.5py]
       fillet: fillet
+  board:
+    - name: _base_board
+    - what: rectangle
+      operation: subtract
+      size: [7, 2]
+      where:
+        - ref: matrix_inner_num
+          shift: [0.5px + mcu_x + 2mcu_p + padding_outside_mcu, -0.5py + 1]
+  board_with_mount_holes:
+    - name: _base_board
+    - what: circle
+      radius: 1
+      where: /hole/
+      operation: subtract
   board_with_components:
     [+board, -_all_keycaps, -_mcu]
 pcbs:
@@ -306,7 +320,7 @@ pcbs:
         what: ceoloide/mounting_hole_plated
         where: /hole/
         params:
-          drill: 3.4
+          drill: 5
           outline: 0.2
   qapla_plate:
     template: kicad8
@@ -323,3 +337,7 @@ pcbs:
         params:
           drill: 2.2
           outline: 1.2
+cases:
+  bottom:
+    - name: board_with_mount_holes
+      extrude: 1
