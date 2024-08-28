@@ -28,17 +28,17 @@ points:
       columns:
         outer:
           key:
-            column_net: P10
+            column_net: P20
           rows.mod.skip: true
         pinky:
           key:
-            column_net: P16
+            column_net: P19
           rows.mod.skip: true
         ring:
           key:
             stagger: 12
             splay: -5
-            column_net: P14
+            column_net: P18
           rows.mod.skip: true
         middle:
           key:
@@ -48,18 +48,18 @@ points:
         index:
           key:
             stagger: -5
-            column_net: P18
+            column_net: P14
           rows.mod.skip: true
         inner:
           key:
             stagger: -2.5
-            column_net: P19
+            column_net: P16
           rows.mod.skip: true
         inner_far:
           key:
             stagger: -2.5
             skip: true
-            column_net: P20
+            column_net: P10
           rows:
             bottom.skip: false
       rows:
@@ -320,16 +320,13 @@ pcbs:
         what: ceoloide/mounting_hole_plated
         where: /hole/
         params:
-          drill: 5
+          drill: 4.9
           outline: 0.2
   qapla_plate:
     template: kicad8
     outlines:
       main:
         outline: plate
-      keycaps:
-        outline: _all_keycaps
-        layer: Eco1.User
     footprints:
       mounting_holes:
         what: ceoloide/mounting_hole_plated
