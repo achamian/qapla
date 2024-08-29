@@ -1,6 +1,6 @@
 units:
-  kx: cx
-  ky: cy
+  kx: u
+  ky: u
   padding: 3
   px: kx + padding
   py: ky + padding
@@ -14,8 +14,8 @@ units:
 
   wall_thickness: 2
 
-  $default_width: cx
-  $default_height: cy
+  $default_width: u
+  $default_height: u
 points:
   zones:
     matrix:
@@ -116,19 +116,19 @@ points:
       columns:
         hole1:
           key:
-            shift: [2.1kx, 6.2ky]
+            shift: [2kx, 6ky]
         hole2:
           key:
-            shift: [2.15kx, 2.4ky]
+            shift: [2.15kx, 2.2ky]
         hole3:
           key:
-            shift: [3.85kx, 6.9ky]
+            shift: [3.85kx, 6.65ky]
         hole4:
           key:
-            shift: [3.05kx, 2.45ky]
+            shift: [3.1kx, 2.25ky]
         hole5:
           key:
-            shift: [3.75kx, 3ky]
+            shift: [3.8kx, 2.8ky]
 outlines:
   _switches:
     - what: rectangle
@@ -206,12 +206,18 @@ outlines:
   pcb:
     - name: _pcb_outline
       fillet: fillet
+    - name: _all_keycaps
+      operation: subtract
     - what: rectangle
       operation: subtract
       size: [7, 2]
       where:
         - ref: matrix_inner_num
           shift: [0.5px + mcu_x + 2mcu_p + padding_outside_mcu, -0.5py - 0.5]
+    - what: circle
+      radius: 2.45
+      where: /hole/
+      operation: subtract
   _tilt_handle:
     - what: polygon
       points:
@@ -272,6 +278,9 @@ pcbs:
       keycaps:
         outline: _all_keycaps
         layer: Eco1.User
+      base:
+        outline: bottom_case_inner
+        layer: Eco2.User
     footprints:
       choc_hotswap:
         what: ceoloide/switch_choc_v1_v2
