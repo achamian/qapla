@@ -270,7 +270,7 @@ outlines:
       where: /hole/
       radius: 1.55
 pcbs:
-  qapla:
+  qapla_mx:
     template: kicad8
     outlines:
       main:
@@ -375,7 +375,7 @@ pcbs:
         params:
           drill: 4.9
           outline: 0.2
-  qapla_plate:
+  qapla_plate_mx:
     template: kicad8
     outlines:
       main:
