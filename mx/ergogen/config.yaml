@@ -206,18 +206,12 @@ outlines:
   pcb:
     - name: _pcb_outline
       fillet: fillet
-    - name: _all_keycaps
-      operation: subtract
     - what: rectangle
       operation: subtract
       size: [7, 2]
       where:
         - ref: matrix_inner_num
           shift: [0.5px + mcu_x + 2mcu_p + padding_outside_mcu, -0.5py - 0.5]
-    - what: circle
-      radius: 2.45
-      where: /hole/
-      operation: subtract
   _tilt_handle:
     - what: polygon
       points:
@@ -278,19 +272,14 @@ pcbs:
       keycaps:
         outline: _all_keycaps
         layer: Eco1.User
-      base:
-        outline: bottom_case_inner
-        layer: Eco2.User
     footprints:
       choc_hotswap:
-        what: ceoloide/switch_choc_v1_v2
+        what: ceoloide/switch_mx
         where: /key/
         params:
           reversible: true
           hotswap: true
           solder: false
-          include_plated_holes: true
-          choc_v2_support: false
           from: "{{column_net}}"
           to: "{{colrow}}"
       diode-bottom:
@@ -326,7 +315,7 @@ pcbs:
         what: ceoloide/display_nice_view
         where:
           ref: matrix_inner_num
-          shift: [0.5px + 0.5mcu_x + mcu_p, -0.5ky - mcu_p - 2]
+          shift: [0.5px + 0.5mcu_x + mcu_p, -0.5ky - mcu_p - 0.25]
         params:
           reversible: true
           include_traces: false
@@ -358,7 +347,7 @@ pcbs:
         what: resistor_led_0805_2012Metric
         where:
           ref: matrix_inner_num
-          shift: [0.5px + 0.5mcu_x + mcu_p, -0.5ky - mcu_p - 21.55]
+          shift: [0.5px + 0.5mcu_x + mcu_p, -0.5ky - mcu_p - 19.8]
       display_cover_hole_1:
         what: ceoloide/mounting_hole_npth
         where:
