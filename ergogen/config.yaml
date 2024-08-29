@@ -12,6 +12,8 @@ units:
   mcu_p: 1.5
   padding_outside_mcu: 8.5
 
+  wall_thickness: 2
+
   $default_width: cx
   $default_height: cy
 points:
@@ -181,7 +183,6 @@ outlines:
       where: /15u/
       size: [1.5kx-0.5, 1ky-0.5]
   _all_keycaps: [+_keycaps1u, +_keycaps15u]
-  plate_with_keycaps: [+plate, -_all_keycaps]
   _mcu:
     - what: rectangle
       size: [mcu_x, mcu_y]
@@ -189,7 +190,7 @@ outlines:
         ref: matrix_inner_num
       adjust:
         shift: [0.5px + 0.5mcu_x + mcu_p, 0.5py - 0.5mcu_y - 0.5]
-  _base_board:
+  _pcb_outline:
     - name: _switch_plate
     - what: polygon
       operation: add
@@ -202,32 +203,42 @@ outlines:
           shift: [0.5px + mcu_x + 2mcu_p + padding_outside_mcu, -0.5py]
         - ref: matrix_inner_far_bottom
           shift: [-0.5px, -0.5py]
+  pcb:
+    - name: _pcb_outline
       fillet: fillet
-  board:
-    - name: _base_board
     - what: rectangle
       operation: subtract
       size: [7, 2]
       where:
         - ref: matrix_inner_num
           shift: [0.5px + mcu_x + 2mcu_p + padding_outside_mcu, -0.5py - 0.5]
-  board_with_mount_holes:
-    - name: _base_board
+  bottom_case_outer:
+    - name: _pcb_outline
+      fillet: fillet
+  bottom_case_inner:
+    - name: _pcb_outline
+      expand: -wall_thickness
+      fillet: fillet
+  mount_standoffs:
     - what: circle
-      radius: 1
       where: /hole/
-      operation: subtract
-  board_with_components:
-    [+board, -_all_keycaps, -_mcu]
+      radius: 4.6
+  mount_holes:
+    - what: circle
+      where: /hole/
+      radius: 3.1
 pcbs:
   qapla:
     template: kicad8
     outlines:
       main:
-        outline: board
+        outline: pcb
       keycaps:
         outline: _all_keycaps
         layer: Eco1.User
+      base:
+        outline: bottom_case_inner
+        layer: Eco2.User
     footprints:
       choc_hotswap:
         what: ceoloide/switch_choc_v1_v2
@@ -336,5 +347,40 @@ pcbs:
           outline: 1.2
 cases:
   bottom:
-    - name: board_with_mount_holes
+    - name: bottom_case_outer
       extrude: 1
+  bottom_inner:
+    - name: bottom_case_inner
+      extrude: 1
+  _outer_wall:
+    - name: bottom_case_outer
+      extrude: 3
+  _inner_wall:
+    - name: bottom_case_inner
+      extrude: 3
+  mount_standoffs:
+    - name: mount_standoffs
+      extrude: 4
+  mount_holes:
+    - name: mount_holes
+      extrude: 4
+  wall:
+    - what: case
+      name: _outer_wall
+      operation: add
+    - what: case
+      name: _inner_wall
+      operation: subtract
+  case:
+    - what: case
+      name: bottom
+      operation: add
+    - what: case
+      name: wall
+      operation: add
+    - what: case
+      name: mount_standoffs
+      operation: add
+    - what: case
+      name: mount_holes
+      operation: subtract
