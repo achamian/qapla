@@ -212,9 +212,45 @@ outlines:
       where:
         - ref: matrix_inner_num
           shift: [0.5px + mcu_x + 2mcu_p + padding_outside_mcu, -0.5py - 0.5]
+  _tilt_handle:
+    - what: polygon
+      points:
+      - shift: [0, 0]
+      - shift: [3.5, -2]
+      - shift: [0, -3.9]
+      - shift: [-3.5, -2]
+      operation: stack
+    - what: circle
+      radius: 2.3
+      where.shift: [2.3, -4]
+      operation: add
+    - what: circle
+      radius: 1.55
+      where.shift: [2.3, -4]
+      operation: subtract
   bottom_case_outer:
     - name: _pcb_outline
       fillet: fillet
+    - name: _tilt_handle
+      where:
+        ref: matrix_inner_num
+        shift: [0.5px + mcu_x+ 2mcu_p + padding_outside_mcu, 0.45ky]
+    - name: _tilt_handle
+      where:
+        ref: matrix_inner_bottom
+        shift: [0.5px + mcu_x+ 2mcu_p + padding_outside_mcu, -0.5ky]
+    - name: _tilt_handle
+      where:
+        ref: matrix_outer_num
+        shift: [-0.5px, 0]
+      adjust:
+        rotate: 180
+    - name: _tilt_handle
+      where:
+        ref: matrix_outer_bottom
+        shift: [-0.5px, -0.5ky + fillet]
+      adjust:
+        rotate: 180
   bottom_case_inner:
     - name: _pcb_outline
       expand: -wall_thickness
@@ -222,11 +258,11 @@ outlines:
   mount_standoffs:
     - what: circle
       where: /hole/
-      radius: 4.6
+      radius: 2.3
   mount_holes:
     - what: circle
       where: /hole/
-      radius: 3.1
+      radius: 1.55
 pcbs:
   qapla:
     template: kicad8
