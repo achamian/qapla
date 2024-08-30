@@ -5913,7 +5913,7 @@
     (fp_line (start -1.5 0.625) (end -3.5 0.625) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
 
     
-    (pad "3" thru_hole roundrect (at -3.5 0) (size 1.2 1.4) (drill 0.3) (layers "*.Cu" "*.Paste" "*.Mask") (roundrect_rratio 0.208333) (net 53 "P4"))
+    (pad "3" thru_hole roundrect (at -3.5 0) (size 1.2 1.4) (drill 0.3) (layers "*.Cu" "*.Paste" "*.Mask") (roundrect_rratio 0.208333) (net 48 "P21"))
     (pad "4" thru_hole roundrect (at -1.5 0) (size 1.2 1.4) (drill 0.3) (layers "*.Cu" "*.Paste" "*.Mask") (roundrect_rratio 0.208333) (net 88 "_3_1"))
   )
     
