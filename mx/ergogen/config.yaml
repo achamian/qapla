@@ -5,7 +5,7 @@ units:
   px: kx + padding
   py: ky + padding
   fillet: 2
-  choc_cutout: 13.8
+  mx_cutout: 14
 
   mcu_x: 18
   mcu_y: 35
@@ -133,7 +133,7 @@ outlines:
   _switches:
     - what: rectangle
       where: /key/
-      size: choc_cutout
+      size: mx_cutout
       bound: false
   _switch_plate:
     - what: polygon
@@ -273,7 +273,7 @@ pcbs:
         outline: _all_keycaps
         layer: Eco1.User
     footprints:
-      choc_hotswap:
+      mx:
         what: ceoloide/switch_mx
         where: /key/
         params:
@@ -291,7 +291,7 @@ pcbs:
           reversible: true
           include_tht: false
         adjust:
-          shift: [7.5 , -0.5ky + 1.15]
+          shift: [7.5 , -0.5ky + 1.2]
           rotate: 180
       diode-top:
         what: ceoloide/diode_tht_sod123
@@ -302,8 +302,22 @@ pcbs:
           reversible: true
           include_tht: false
         adjust:
-          shift: [7.5 , 0.5ky - 1.15]
+          shift: [7.5 , 0.5ky - 1.2]
           rotate: 180
+      via_pad_1:
+        what: via
+        where: key
+        adjust:
+          shift: [0, 8]
+        params:
+          net: "{{column_net}}"
+      via_pad_2:
+        what: via
+        where: /(num|home)/
+        adjust:
+          shift: [0, 7]
+        params:
+          net: "{{colrow}}"
       promicro:
         what: ceoloide/mcu_nice_nano
         where:
@@ -348,6 +362,8 @@ pcbs:
         where:
           ref: matrix_inner_num
           shift: [0.5px + 0.5mcu_x + mcu_p, -0.5ky - mcu_p - 19.8]
+        params:
+          GPIO: P4
       display_cover_hole_1:
         what: ceoloide/mounting_hole_npth
         where:
@@ -362,7 +378,7 @@ pcbs:
         what: ceoloide/mounting_hole_plated
         where: /hole/
         params:
-          drill: 4.9
+          drill: 4.8
           outline: 0.2
   qapla_plate_mx:
     template: kicad8
@@ -391,10 +407,11 @@ cases:
       extrude: 3
   mount_standoffs:
     - name: mount_standoffs
-      extrude: 4
+      extrude: 6
   mount_holes:
     - name: mount_holes
       extrude: 4
+      shift: [0, 0, 2]
   wall:
     - what: case
       name: _outer_wall
