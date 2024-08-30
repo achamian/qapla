@@ -263,6 +263,20 @@ outlines:
     - what: circle
       where: /hole/
       radius: 1.55
+  oled_cover_plate:
+    - what: rectangle
+      size: [28.95, 59]
+      fillet: fillet
+    - what: circle
+      radius: 1.55
+      operation: subtract
+      adjust:
+        shift: [28.95/2 - 3, 59/2 - 3]
+    - what: circle
+      radius: 1.55
+      operation: subtract
+      adjust:
+        shift: [-28.95/2 + 3, 59/2 - 3]
 pcbs:
   qapla_mx:
     template: kicad8
@@ -432,3 +446,6 @@ cases:
     - what: case
       name: mount_holes
       operation: subtract
+  oled_cover_plate:
+    - name: oled_cover_plate
+      extrude: 3
