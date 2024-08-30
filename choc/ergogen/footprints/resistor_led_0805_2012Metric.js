@@ -4,7 +4,7 @@ module.exports = {
   params: {
     side: 'F',
     VCC: { type: 'net', value: 'VCC' },
-    GND: { type: 'net', value: 'GND' }
+    GPIO: { type: 'net', value: 'GPIO' }
   },
   body: p => {
     let local_net = p.local_net("1");
@@ -90,7 +90,7 @@ module.exports = {
     (fp_line (start -1.5 0.625) (end -3.5 0.625) (stroke (width 0.1) (type solid)) (layer "B.Fab"))
 
     ${'' /* Pads */}
-    (pad "3" thru_hole roundrect (at -3.5 0) (size 1.2 1.4) (drill 0.3) (layers "*.Cu" "*.Paste" "*.Mask") (roundrect_rratio 0.208333) ${p.GND})
+    (pad "3" thru_hole roundrect (at -3.5 0) (size 1.2 1.4) (drill 0.3) (layers "*.Cu" "*.Paste" "*.Mask") (roundrect_rratio 0.208333) ${p.GPIO})
     (pad "4" thru_hole roundrect (at -1.5 0) (size 1.2 1.4) (drill 0.3) (layers "*.Cu" "*.Paste" "*.Mask") (roundrect_rratio 0.208333) ${local_net.str})
   )
     `;

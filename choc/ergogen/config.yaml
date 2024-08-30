@@ -263,6 +263,20 @@ outlines:
     - what: circle
       where: /hole/
       radius: 1.55
+  oled_cover_plate:
+    - what: rectangle
+      size: [28.95, 52]
+      fillet: fillet
+    - what: circle
+      radius: 1.55
+      operation: subtract
+      adjust:
+        shift: [28.95/2 - 3, 52/2 - 3]
+    - what: circle
+      radius: 1.55
+      operation: subtract
+      adjust:
+        shift: [-28.95/2 + 3, 52/2 - 3]
 pcbs:
   qapla_choc:
     template: kicad8
@@ -293,7 +307,7 @@ pcbs:
           reversible: true
           include_tht: false
         adjust:
-          shift: [7.5 , -0.5ky + 1.15]
+          shift: [7.5 , -0.5ky + 1.2]
           rotate: 180
       diode-top:
         what: ceoloide/diode_tht_sod123
@@ -304,7 +318,7 @@ pcbs:
           reversible: true
           include_tht: false
         adjust:
-          shift: [7.5 , 0.5ky - 1.15]
+          shift: [7.5 , 0.5ky - 1.2]
           rotate: 180
       promicro:
         what: ceoloide/mcu_nice_nano
@@ -350,6 +364,8 @@ pcbs:
         where:
           ref: matrix_inner_num
           shift: [0.5px + 0.5mcu_x + mcu_p, -0.5ky - mcu_p - 21.55]
+        params:
+          GPIO: P4
       display_cover_hole_1:
         what: ceoloide/mounting_hole_npth
         where:
@@ -359,12 +375,12 @@ pcbs:
         what: ceoloide/mounting_hole_npth
         where:
           ref: matrix_inner_far_bottom
-          shift: [18.5, 14]
+          shift: [19, 14]
       mounting_holes:
         what: ceoloide/mounting_hole_plated
         where: /hole/
         params:
-          drill: 4.9
+          drill: 4.8
           outline: 0.2
   qapla_plate_choc:
     template: kicad8
@@ -393,10 +409,10 @@ cases:
       extrude: 3
   mount_standoffs:
     - name: mount_standoffs
-      extrude: 4
+      extrude: 5
   mount_holes:
     - name: mount_holes
-      extrude: 4
+      extrude: 5
   wall:
     - what: case
       name: _outer_wall
@@ -417,3 +433,6 @@ cases:
     - what: case
       name: mount_holes
       operation: subtract
+  oled_cover_plate:
+    - name: oled_cover_plate
+      extrude: 3
