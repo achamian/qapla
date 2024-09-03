@@ -27,7 +27,7 @@ Qapla supports Nice!View reversible footprint. To use I2C OLED display instead o
 
 Bridge jumpers on the opposite side of the connector. Note the polarity when connecting the battery.
 
-## BoM
+## Bill of Materials
 
 | Quantity | Component | Notes |
 |----------|-----------|-------|
@@ -36,6 +36,7 @@ Bridge jumpers on the opposite side of the connector. Note the polarity when con
 | 60 | Choc or MX switches | Depending on preference |
 | 60 | Diodes (1N4148 or similar) | SOD-123 |
 | 2 | Reset switches | |
+| 2 | JS102011SAQN SMT slide switch | |
 | 2 | Nice!View or OLED displays | Optional |
 | 56 | Keycaps 1u | Compatible with chosen switches |
 | 4 | Keycaps 1.5u | Compatible with chosen switches |
