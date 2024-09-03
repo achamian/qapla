@@ -29,17 +29,20 @@ Bridge jumpers on the opposite side of the connector. Note the polarity when con
 
 ## BoM
 
-| Component | Quantity | Notes |
-|-----------|----------|-------|
-| PCB | 2 | Left and right halves |
-| Pro Micro compatible MCU | 2 | e.g., Nice!Nano for wireless |
-| Choc or MX switches | 60 | Depending on preference |
-| Diodes (1N4148 or similar) | 60 | SOD-123 |
-| Reset switches | 2 | |
-| Nice!View or OLED displays | 2 | Optional |
-| Keycaps 1u |56 | Compatible with chosen switches |
-| Keycaps 1.5u |4 | Compatible with chosen switches |
-| M2 screws and standoffs | As needed | For case assembly |
+| Quantity | Component | Notes |
+|----------|-----------|-------|
+| 2 | PCB | Left and right halves |
+| 2 | Pro Micro compatible MCU | e.g., Nice!Nano for wireless |
+| 60 | Choc or MX switches | Depending on preference |
+| 60 | Diodes (1N4148 or similar) | SOD-123 |
+| 2 | Reset switches | |
+| 2 | Nice!View or OLED displays | Optional |
+| 56 | Keycaps 1u | Compatible with chosen switches |
+| 4 | Keycaps 1.5u | Compatible with chosen switches |
+| 10 | M2 3mm screws | For case assembly |
+| 10 | M2 heat inserts OD: 3.2mm, Length: 3mm | For case assembly [AliExpress](https://vi.aliexpress.com/item/1005003582355741.html)|
+| 2 | Blue SMD standard LED | 0805(2012 metric) - Optional - Battery Indicator|
+| 2 | 220 Ohm SMD resistors | 0805(2012 metric) - Optional - Battery Indicator|
 
 ## Links
 
