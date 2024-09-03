@@ -2,7 +2,7 @@
 
 ## Qapla 60 key keyboard
 
-Qapla is a 60 key keyboard with Choc switches inspired by Lilly58 and Sofle. Columns have splay and stagger based on my cardboard mocks.
+Qapla is a 60 key keyboard with Choc or MX switches inspired by Lilly58 and Sofle. Columns have splay and stagger based on my cardboard mocks.
 
 For designing the layout it uses
 
@@ -10,13 +10,9 @@ For designing the layout it uses
 * [Ceoloide Footprints](https://github.com/achamian/ergogen-footprints/tree/diode_via_connections) to add footprints (It is a fork which adds via pads for diodes).
 * Routing is done in KiCad.
 
-## Components
+## Components and Jumpers
 
 ### MCU
-
-Qapla supports Pro Micro footprint. Footprint is reversible to use same PCB for left and right half.
-
-Jumpers to bridge:
 
 * Solder jumpers on the front if controller is mounted on top of the pcb facing it
 * Solder jumpers on the back if controller is mounted on top of the pcb facing away from it
@@ -29,7 +25,21 @@ Qapla supports Nice!View reversible footprint. To use I2C OLED display instead o
 
 ### JST Battery Connector
 
-Qapla support JST 2mm battery connector. Bridge jumpers on the opposite side of the connector. Note the polarity when connecting the battery.
+Bridge jumpers on the opposite side of the connector. Note the polarity when connecting the battery.
+
+## BoM
+
+| Component | Quantity | Notes |
+|-----------|----------|-------|
+| PCB | 2 | Left and right halves |
+| Pro Micro compatible MCU | 2 | e.g., Nice!Nano for wireless |
+| Choc or MX switches | 60 | Depending on preference |
+| Diodes (1N4148 or similar) | 60 | SOD-123 |
+| Reset switches | 2 | |
+| Nice!View or OLED displays | 2 | Optional |
+| Keycaps 1u |56 | Compatible with chosen switches |
+| Keycaps 1.5u |4 | Compatible with chosen switches |
+| M2 screws and standoffs | As needed | For case assembly |
 
 ## Links
 

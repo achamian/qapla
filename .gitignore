@@ -1,6 +1,7 @@
-*/output
+output
 *.kicad_pcb.lck
 */pcb/qapla*/fp-info-cache
 */pcb/qapla*/qapla*-backups
 */pcb/qapla*/_autosave*
-*gerber*
+node_modules
+v1/ergogen/config.yaml
