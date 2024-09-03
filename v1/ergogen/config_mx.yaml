@@ -1,0 +1,50 @@
+units:
+  kx: u
+  ky: u
+  cutout: 14
+  mcu_p: 1.5
+  $default_width: u
+  $default_height: u
+  hole1_x: 2kx
+  hole1_y: 6ky
+  hole2_x: 2.15kx
+  hole2_y: 2.2ky
+  hole3_x: 3.85kx
+  hole3_y: 6.65ky
+  hole4_x: 3.1kx
+  hole4_y: 2.25ky
+  hole5_x: 3.8kx
+  hole5_y: 2.8ky
+  cover_plate_length: 59
+  oled_y: -1 * (0.5ky + mcu_p + 0.25)
+  battery_led_y: -1 * (0.5ky + mcu_p + 19.8)
+  display_cover_hole_1_x: -4.75
+  display_cover_hole_2_x: 18.25
+  mount_standoffs_size: 5
+  mount_holes_z: 2
+pcbs:
+  qapla:
+    footprints:
+      mx_hotswap:
+        what: ceoloide/switch_mx
+        where: /key/
+        params:
+          reversible: true
+          hotswap: true
+          solder: false
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+      via_pad_1:
+        what: via
+        where: key
+        adjust:
+          shift: [0, 8]
+        params:
+          net: "{{column_net}}"
+      via_pad_2:
+        what: via
+        where: /(num|home)/
+        adjust:
+          shift: [0, 7]
+        params:
+          net: "{{colrow}}"

@@ -1,21 +1,13 @@
 units:
-  kx: u
-  ky: u
   padding: 3
   px: kx + padding
   py: ky + padding
   fillet: 2
-  mx_cutout: 14
-
   mcu_x: 18
   mcu_y: 35
-  mcu_p: 1.5
   padding_outside_mcu: 8.5
-
   wall_thickness: 2
 
-  $default_width: u
-  $default_height: u
 points:
   zones:
     matrix:
@@ -116,24 +108,24 @@ points:
       columns:
         hole1:
           key:
-            shift: [2kx, 6ky]
+            shift: [hole1_x, hole1_y]
         hole2:
           key:
-            shift: [2.15kx, 2.2ky]
+            shift: [hole2_x, hole2_y]
         hole3:
           key:
-            shift: [3.85kx, 6.65ky]
+            shift: [hole3_x, hole3_y]
         hole4:
           key:
-            shift: [3.1kx, 2.25ky]
+            shift: [hole4_x, hole4_y]
         hole5:
           key:
-            shift: [3.8kx, 2.8ky]
+            shift: [hole5_x, hole5_y]
 outlines:
   _switches:
     - what: rectangle
       where: /key/
-      size: mx_cutout
+      size: cutout
       bound: false
   _switch_plate:
     - what: polygon
@@ -265,20 +257,20 @@ outlines:
       radius: 1.55
   oled_cover_plate:
     - what: rectangle
-      size: [28.95, 59]
+      size: [28.95, cover_plate_length]
       fillet: fillet
     - what: circle
       radius: 1.55
       operation: subtract
       adjust:
-        shift: [28.95/2 - 3, 59/2 - 3]
+        shift: [28.95/2 - 3, cover_plate_length/2 - 3]
     - what: circle
       radius: 1.55
       operation: subtract
       adjust:
-        shift: [-28.95/2 + 3, 59/2 - 3]
+        shift: [-28.95/2 + 3, cover_plate_length/2 - 3]
 pcbs:
-  qapla_mx:
+  qapla:
     template: kicad8
     outlines:
       main:
@@ -287,15 +279,6 @@ pcbs:
         outline: _all_keycaps
         layer: Eco1.User
     footprints:
-      mx:
-        what: ceoloide/switch_mx
-        where: /key/
-        params:
-          reversible: true
-          hotswap: true
-          solder: false
-          from: "{{column_net}}"
-          to: "{{colrow}}"
       diode-bottom:
         what: ceoloide/diode_tht_sod123
         where: /(num|home)/
@@ -318,20 +301,6 @@ pcbs:
         adjust:
           shift: [7.5 , 0.5ky - 1.2]
           rotate: 180
-      via_pad_1:
-        what: via
-        where: key
-        adjust:
-          shift: [0, 8]
-        params:
-          net: "{{column_net}}"
-      via_pad_2:
-        what: via
-        where: /(num|home)/
-        adjust:
-          shift: [0, 7]
-        params:
-          net: "{{colrow}}"
       promicro:
         what: ceoloide/mcu_nice_nano
         where:
@@ -343,7 +312,7 @@ pcbs:
         what: ceoloide/display_nice_view
         where:
           ref: matrix_inner_num
-          shift: [0.5px + 0.5mcu_x + mcu_p, -0.5ky - mcu_p - 0.25]
+          shift: [0.5px + 0.5mcu_x + mcu_p, oled_y]
         params:
           reversible: true
           include_traces: false
@@ -375,26 +344,26 @@ pcbs:
         what: resistor_led_0805_2012Metric
         where:
           ref: matrix_inner_num
-          shift: [0.5px + 0.5mcu_x + mcu_p, -0.5ky - mcu_p - 19.8]
+          shift: [0.5px + 0.5mcu_x + mcu_p, battery_led_y]
         params:
           GPIO: P21
       display_cover_hole_1:
         what: ceoloide/mounting_hole_npth
         where:
           ref: matrix_inner_far_bottom
-          shift: [-4.75, 14]
+          shift: [display_cover_hole_1_x, 14]
       display_cover_hole_2:
         what: ceoloide/mounting_hole_npth
         where:
           ref: matrix_inner_far_bottom
-          shift: [18.25, 14]
+          shift: [display_cover_hole_2_x, 14]
       mounting_holes:
         what: ceoloide/mounting_hole_plated
         where: /hole/
         params:
           drill: 4.8
           outline: 0.2
-  qapla_plate_mx:
+  qapla_plate:
     template: kicad8
     outlines:
       main:
@@ -421,11 +390,11 @@ cases:
       extrude: 3
   mount_standoffs:
     - name: mount_standoffs
-      extrude: 6
+      extrude: mount_standoffs_size
   mount_holes:
     - name: mount_holes
-      extrude: 4
-      shift: [0, 0, 2]
+      extrude: 5
+      shift: [0, 0, mount_holes_z]
   wall:
     - what: case
       name: _outer_wall

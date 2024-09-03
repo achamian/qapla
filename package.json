@@ -1,0 +1,13 @@
+{
+  "name": "qapla",
+  "version": "1.0.0",
+  "description": "A 60 key keyboard",
+  "author": "Niranjan Paranjape",
+  "license": "MIT",
+  "dependencies": {
+    "ergogen": "^4.0.8",
+    "lodash": "^4.17.21",
+    "commander": "^11.0.0",
+    "js-yaml": "^4.1.0"
+  }
+}
