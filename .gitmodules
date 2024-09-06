@@ -1,0 +1,3 @@
+[submodule "v1/ergogen/footprints/ceoloide"]
+	path = v1/ergogen/footprints/ceoloide
+	url = git@github.com:achamian/ergogen-footprints.git

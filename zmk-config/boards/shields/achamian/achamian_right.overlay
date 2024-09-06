@@ -1,5 +1,0 @@
-#include "achamian.dtsi"
-
-&default_transform {
-    col-offset = <5>;
-};
