@@ -1,7 +1,9 @@
-on:
+on: 
   workflow_dispatch:
     inputs:
-      config_path: 'zmk-config/config'
+      config_path: 
+        type: 'string'
+        default: 'zmk-config/config'
 
 jobs:
   build:
