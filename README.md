@@ -48,3 +48,7 @@ Bridge jumpers on the opposite side of the connector. Note the polarity when con
 ## Links
 
 * [Introduction to Ergogen](https://flatfootfox.com/ergogen-introduction/)
+
+## Firmware
+
+* ZMK Firmware
