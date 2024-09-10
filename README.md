@@ -48,7 +48,9 @@ Bridge jumpers on the opposite side of the connector. Note the polarity when con
 ## Links
 
 * [Introduction to Ergogen](https://flatfootfox.com/ergogen-introduction/)
+* [ZMK Keymap Editor](https://nickcoutsos.github.io/keymap-editor/)
+* [Keymap Layout Tool](https://nickcoutsos.github.io/keymap-layout-tools/)
 
 ## Firmware
 
-* ZMK Firmware
+* ZMK Firmware is in a [sister repository](https://github.com/achamian/qapla-zmk-config)
